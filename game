@@ -4,11 +4,6 @@ import random as rand
 # maze configuration variables
 num_sides = 15
 path_width = 25 
-index = 0
-turtle_names = ["T0", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9"]
-def change_turtle_names():
-  name = turtle_names[index]
-  index += 1
 
 colors = ["red", "blue", "orange", "purple", "green", "pink", "yellow", "brown", "light blue", "cyan"]
 def change_wall_color():
@@ -58,7 +53,9 @@ maze_drawer.pendown()
 
 # config the maze runner
 shapes = ["circle", "triangle", "square", "turtle"]
-maze_runner = trtl.Turtle(shape = rand.choice(shapes))
+print(shapes)
+user_shape = input("What shape would you like your turtle to be?: ")
+maze_runner = trtl.Turtle(shape = user_shape)
 colors_2 = ["red", "blue", "orange", "purple", "green", "pink", "yellow", "brown", "light blue", "cyan"]
 maze_runner.fillcolor(rand.choice(colors_2))
 maze_runner.penup()
